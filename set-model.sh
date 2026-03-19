@@ -15,12 +15,16 @@ echo ""
 echo "请选择要设置的模型："
 echo ""
 echo "  1) qwen3.5-plus"
-echo "  2) kimi-k2.5"
-echo "  3) glm-5"
-echo "  4) MiniMax-M2.5"
-echo "  5) 删除 ANTHROPIC_MODEL 环境变量"
+echo "  2) qwen3-max-2026-01-23"
+echo "  3) qwen3-coder-next"
+echo "  4) qwen3-coder-plus"
+echo "  5) kimi-k2.5"
+echo "  6) glm-5"
+echo "  7) glm-4.7"
+echo "  8) MiniMax-M2.5"
+echo "  9) 删除 ANTHROPIC_MODEL 环境变量"
 echo ""
-echo -n "请输入选项 [1-5]: "
+echo -n "请输入选项 [1-9]: "
 
 read -r choice
 
@@ -29,15 +33,27 @@ case $choice in
         selected_model="qwen3.5-plus"
         ;;
     2)
-        selected_model="kimi-k2.5"
+        selected_model="qwen3-max-2026-01-23"
         ;;
     3)
-        selected_model="glm-5"
+        selected_model="qwen3-coder-plus"
         ;;
     4)
-        selected_model="MiniMax-M2.5"
+        selected_model="qwen3-coder-next"
         ;;
     5)
+        selected_model="kimi-k2.5"
+        ;;
+    6)
+        selected_model="glm-5"
+        ;;
+    7)
+        selected_model="glm-4.7"
+        ;;
+    8)
+        selected_model="MiniMax-M2.5"
+        ;;
+    9)
         # 删除环境变量
         if [ -f "$MODEL_FILE" ]; then
             # 删除已存在的 ANTHROPIC_MODEL 行
